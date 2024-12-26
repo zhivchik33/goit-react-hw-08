@@ -3,8 +3,7 @@ import axios from "axios";
 
 export const authInstance = axios.create({
   baseURL: "https://connections-api.goit.global/",
-  // headers: {
-  //     "Authorization": "Bearer ${token}"
+  
 });
 
 export const setToken = (token) => {

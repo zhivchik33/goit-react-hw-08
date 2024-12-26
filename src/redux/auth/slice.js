@@ -28,11 +28,10 @@ const authSlice = createSlice({
         state.token = action.payload.token;
         state.user.name = action.payload.user.name;
         state.user.email = action.payload.user.email;
-        // state.user = action.payload.user;
       })
       .addCase(apiRegisterUser.rejected, (state) => {
         state.isLoading = false;
-      }) //login
+      }) 
       .addCase(apiLoginUser.pending, (state) => {
         state.isLoading = true;
       })
@@ -41,11 +40,10 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
         state.token = action.payload.token;
         state.user.name = action.payload.user.name;
-        // state.user = action.payload.user;
       })
       .addCase(apiLoginUser.rejected, (state) => {
         state.isLoading = false;
-      }) //current user//////////////////
+      }) 
       .addCase(apiGetCurrentUser.pending, (state) => {
         state.isRefreshing = true;
       })
@@ -57,17 +55,15 @@ const authSlice = createSlice({
       .addCase(apiGetCurrentUser.rejected, (state, action) => {
         state.isRefreshing = false;
         state.error = action.payload;
-      }) //log out///////////////////
+      }) 
       .addCase(apiLogoutUser.pending, (state) => {
         state.isLoading = true;
-        // state.error = null;
       })
       .addCase(apiLogoutUser.fulfilled, () => {
         return INITIAL_STATE;
       })
       .addCase(apiLogoutUser.rejected, (state) => {
         state.isLoading = false;
-        // state.error = action.payload;
       }),
 });
 export const authReducer = authSlice.reducer;
