@@ -1,0 +1,8 @@
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.greeting {
+  font-weight: 700;
+}
